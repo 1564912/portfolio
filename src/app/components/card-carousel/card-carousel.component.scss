@@ -77,3 +77,9 @@
     max-width: 374px;
   }
 }
+
+@media (max-width: 768) {
+  .carousel {
+    max-width: 304px;
+  }
+}

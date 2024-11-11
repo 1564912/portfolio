@@ -49,6 +49,9 @@ export class CardCarouselComponent implements AfterViewInit, OnDestroy {
   /** Subscription that allows you to control the page resize event. */
   private resizeSubscription: Subscription | null = null;
 
+  /** Size of each card in the carousel. Depending on the screen size this may change. */
+  private cardWidth = 374;
+
   constructor(private cdr: ChangeDetectorRef) {}
 
   /**
@@ -107,7 +110,7 @@ export class CardCarouselComponent implements AfterViewInit, OnDestroy {
    * @returns - string with the scss command that updates the position of the cards.
    */
   getCarouselTransform(): string {
-    const translateX = -(this.currentPage * this.cardsPerPage * 374);
+    const translateX = -(this.currentPage * this.cardsPerPage * this.cardWidth);
     return `translateX(${translateX}px)`;
   }
 
@@ -132,8 +135,16 @@ export class CardCarouselComponent implements AfterViewInit, OnDestroy {
   private calculateCardsPerPage(): void {
     if (!this.carousel) return;
     const carouselWidth = this.carousel.nativeElement.offsetWidth;
-    const cardWidth = 374;
-    this.cardsPerPage = Math.floor(carouselWidth / cardWidth);
+
+    if (window.innerWidth < 768) {
+      this.cardWidth = 304;
+    } else {
+      this.cardWidth = 374;
+    }
+
+    this.cardsPerPage = Math.floor(carouselWidth / this.cardWidth);
+
+    if (this.cardsPerPage <= 0) this.cardsPerPage = 1;
     this.totalPages = Math.ceil(this.cards.length / this.cardsPerPage);
   }
 }
