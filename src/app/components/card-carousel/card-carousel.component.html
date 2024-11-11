@@ -1,0 +1,42 @@
+<div class="carousel-container">
+  <button
+    (click)="scrollLeft()"
+    class="carousel-container__scroll-button"
+    [ngClass]="{ 'carousel-container__hidden-button': currentPage === 0 }"
+  >
+    <i class="fa-solid fa-arrow-left"></i>
+  </button>
+  <div class="carousel" #carousel>
+    <div
+      class="carousel-inner"
+      [style.transform]="getCarouselTransform()"
+      [style.transition]="isTransitioning ? 'transform 0.5s ease' : 'none'"
+    >
+      <ng-container *ngFor="let card of cards; let i = index">
+        <div class="carousel-card">
+          <app-project-card
+            [imgSrc]="card.image"
+            [imgAlt]="'Test'"
+            [title]="card.text"
+          ></app-project-card>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+  <button
+    (click)="scrollRight()"
+    class="carousel-container__scroll-button"
+    [ngClass]="{
+      'carousel-container__hidden-button': currentPage === totalPages - 1
+    }"
+  >
+    <i class="fa-solid fa-arrow-right"></i>
+  </button>
+</div>
+<div class="carousel-page-indicator">
+  <span
+    *ngFor="let page of [].constructor(totalPages); let i = index"
+    [class.active]="i === currentPage"
+    (click)="goToPage(i)"
+  ></span>
+</div>
