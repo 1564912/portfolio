@@ -56,8 +56,9 @@
 
 @media (max-width: 768px) {
   :host {
-    width: 280px;
+    width: 250px;
     height: 350px;
+    padding: 10px;
   }
 
   .project-card__info {
@@ -70,6 +71,6 @@
   }
 
   .project-card__image {
-    max-width: 240px;
+    max-width: 220px;
   }
 }

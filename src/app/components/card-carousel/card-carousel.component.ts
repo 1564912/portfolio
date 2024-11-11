@@ -137,7 +137,7 @@ export class CardCarouselComponent implements AfterViewInit, OnDestroy {
     const carouselWidth = this.carousel.nativeElement.offsetWidth;
 
     if (window.innerWidth < 768) {
-      this.cardWidth = 304;
+      this.cardWidth = 274;
     } else {
       this.cardWidth = 374;
     }
