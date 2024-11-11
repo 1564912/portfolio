@@ -1,0 +1,51 @@
+/* Style the navbar */
+// .pc-sidebar-content {
+//   position: sticky;
+//   top: 0;
+//   overflow: hidden;
+//   background-color: black;
+
+//   .pc-sidebar-links a {
+//     float: left;
+//     display: block;
+//     color: white;
+//     text-align: center;
+//     padding: 14px;
+//     text-decoration: none;
+//     margin-left: 20px;
+//   }
+
+//   .pc-sidebar-linkedin {
+//     float: right;
+//     display: block;
+//     padding: 14px;
+//     margin-right: 20px;
+//   }
+// }
+
+/* Style the navbar */
+.pc-sidebar-content {
+  position: fixed; /* Cambiado de sticky a fixed */
+  top: 0;
+  left: 0; /* Añadido para alinearla al borde izquierdo */
+  width: 100%; /* Puedes ajustar el ancho según tus necesidades */
+  background-color: black;
+  z-index: 1000; /* Opcional: para asegurarte de que esté por encima de otros elementos */
+
+  .pc-sidebar-links a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+    margin-left: 20px;
+  }
+
+  .pc-sidebar-linkedin {
+    float: right;
+    display: block;
+    padding: 14px;
+    margin-right: 20px;
+  }
+}
