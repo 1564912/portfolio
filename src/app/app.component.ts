@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
-import { HomeSectionComponent } from './components/home-section/home-section.component';
 import { CardCarouselComponent } from './components/card-carousel/card-carousel.component';
 import { ProjectCardComponent } from './components/project-card/project-card.component';
 
@@ -14,7 +13,6 @@ import { ProjectCardComponent } from './components/project-card/project-card.com
     RouterModule,
     SidebarComponent,
     CommonModule,
-    HomeSectionComponent,
     CardCarouselComponent,
     ProjectCardComponent,
   ],
